@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1399565182003272872}
   - component: {fileID: 1399565182003272870}
   - component: {fileID: 1772199356444141390}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Eatable
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -112,4 +112,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19e385df1f0c11f48a9b55826ff03196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 4

@@ -19,6 +19,6 @@ public class MainFlow : MonoBehaviour
 
     void Update()
     {
-        
+        FishManager.Instance.UpdateRefresh();
     }
 }

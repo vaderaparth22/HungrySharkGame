@@ -9,7 +9,7 @@ enum FishType
     NonEatable
 }
 
-public class FishManager : MonoBehaviour
+public class FishManager
 {
     #region Singleton
     private FishManager() { }
@@ -28,7 +28,7 @@ public class FishManager : MonoBehaviour
     #endregion
 
     private Dictionary<FishType, Enemy> fishPrefabs = new Dictionary<FishType, Enemy>();
-    private List<Enemy> allFishes;
+    private List<Enemy> allFishes = new List<Enemy>();
     private Transform[] spawnPositions;
 
     public void Initialize()
@@ -39,9 +39,12 @@ public class FishManager : MonoBehaviour
 
     public void UpdateRefresh()
     {
-        foreach (KeyValuePair<FishType, Enemy> fish in fishPrefabs)
+        if (allFishes.Count > 0)
         {
-            fish.Value.RefreshUpdate();
+            foreach (Enemy fish in allFishes)
+            {
+                fish.RefreshUpdate();
+            }
         }
     }
 
@@ -57,9 +60,10 @@ public class FishManager : MonoBehaviour
         {
             FishType fishType = (FishType)UnityEngine.Random.Range(0, Enum.GetValues(typeof(FishType)).Length);
             Enemy e = GameObject.Instantiate<Enemy>(fishPrefabs[fishType]);
-            Transform newPos = spawnPositions[UnityEngine.Random.Range(0, spawnPositions.Length - 1)];
+            Transform newPos = spawnPositions[i];
             e.transform.position = newPos.position;
             e.Initialize(newPos.right);
+
             allFishes.Add(e);
         }
     }

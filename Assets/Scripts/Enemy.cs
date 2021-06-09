@@ -10,11 +10,17 @@ public class Enemy : MonoBehaviour
 
     public void Initialize(Vector2 dir)
     {
-        this.moveDirection = dir;
+        transform.rotation = Quaternion.FromToRotation(transform.right, (Vector2)dir);
     }
 
     public void RefreshUpdate()
     {
-        transform.position = moveDirection * speed;
+        transform.position += transform.right * speed * Time.deltaTime;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Player"))
+            gameObject.SetActive(false);    //remove from pool rather than Destroy(gameObject)
     }
 }
