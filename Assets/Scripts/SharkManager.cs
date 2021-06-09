@@ -20,13 +20,12 @@ public class SharkManager
     }
     #endregion
 
+    private PlayerShark sharkPrefab;
+    private PlayerShark playerShark;
+
     public void Initialize()
     {
-
-    }
-
-    public void UpdateRefresh()
-    {
-
+        sharkPrefab = Resources.Load<PlayerShark>("Prefabs/Shark");
+        playerShark = GameObject.Instantiate<PlayerShark>(sharkPrefab);
     }
 }
