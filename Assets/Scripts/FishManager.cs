@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class FishManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    #region Singleton
+    private FishManager() { }
+    private static FishManager _instance;
+    public static FishManager Instance
     {
-        
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = new FishManager();
+            }
+            return _instance;
+        }
+    }
+    #endregion
+
+    public void Initialize()
+    {
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateRefresh()
     {
-        
+
     }
 }

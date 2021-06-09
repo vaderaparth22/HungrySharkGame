@@ -2,17 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TimerManager : MonoBehaviour
+public class TimerManager
 {
-    // Start is called before the first frame update
-    void Start()
+    #region Singleton
+    private TimerManager() { }
+    private static TimerManager _instance;
+    public static TimerManager Instance
     {
-        
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = new TimerManager();
+            }
+            return _instance;
+        }
+    }
+    #endregion
+
+    public void Initialize()
+    {
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateRefresh()
     {
-        
+
     }
 }

@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class CollectibleManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    #region Singleton
+    private CollectibleManager() { }
+    private static CollectibleManager _instance;
+    public static CollectibleManager Instance
     {
-        
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = new CollectibleManager();
+            }
+            return _instance;
+        }
+    }
+    #endregion
+
+    public void Initialize()
+    {
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateRefresh()
     {
-        
+
     }
 }

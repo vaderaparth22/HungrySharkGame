@@ -2,17 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SharkManager : MonoBehaviour
+public class SharkManager
 {
-    // Start is called before the first frame update
-    void Start()
+    #region Singleton
+    private SharkManager() { }
+    private static SharkManager _instance;
+    public static SharkManager Instance
     {
-        
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = new SharkManager();
+            }
+            return _instance;
+        }
+    }
+    #endregion
+
+    public void Initialize()
+    {
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateRefresh()
     {
-        
+
     }
 }
