@@ -11,8 +11,8 @@ public class PlayerShark : MonoBehaviour
     private Vector2 minScreenBounds;
     private Vector2 maxScreenBounds;
 
-    public float speed;
-    public float rotationSpeed;
+    [SerializeField] private float speed;
+    [SerializeField] private float rotationSpeed;
 
 
     void Start()

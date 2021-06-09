@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1399565182003272873}
   - component: {fileID: 1399565182003272872}
   - component: {fileID: 1399565182003272870}
+  - component: {fileID: 1772199356444141390}
   m_Layer: 0
   m_Name: Eatable
   m_TagString: Enemy
@@ -99,3 +100,16 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.32
+--- !u!114 &1772199356444141390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399565182003272875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19e385df1f0c11f48a9b55826ff03196, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
